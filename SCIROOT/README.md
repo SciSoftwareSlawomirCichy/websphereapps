@@ -1,6 +1,6 @@
 # SCIROOT
 
-Przykładowa Aplikacja Web "Hello World". Aplikacja została napisana w celu stworzenia workaround błędnego budowania konteksti w aplikacji IBM BAW. Zawiera filtr, który wyłapuje błędny kontekst i go "naprawia".
+Przykładowa Aplikacja Web "Hello World". Aplikacja została napisana w celu stworzenia workaround błędnego budowania kontekstu w aplikacji IBM BAW. Zawiera filtr, który wyłapuje błędny kontekst i go "naprawia".
 
 Dostęp do uruchomionej aplikacji:
 
