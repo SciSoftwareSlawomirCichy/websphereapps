@@ -1,5 +1,5 @@
 # websphereapps
 
-Zbiór aplikacji Web przygotowanych pod kątem Serwera Aplikacji IBM WebSphere.
+Zbiór aplikacji Web przygotowanych pod kątem wykorzystania ich za pośrednictwem Serwera Aplikacji IBM WebSphere.
 
  
