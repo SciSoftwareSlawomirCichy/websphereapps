@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+          version="3.0">
+	     
+	<display-name>ROOT Web Application</display-name>
+	<description>ROOT Web Application for contex "/"</description>
+
+	<servlet>
+		<display-name>moduleDb-3.0</display-name>
+		<servlet-name>moduleDb-3.0</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+		<multipart-config>
+			<max-file-size>157286400</max-file-size>
+			<max-request-size>41943040</max-request-size>
+			<file-size-threshold>5242880</file-size-threshold>
+		</multipart-config>
+    </servlet>
+
+	<servlet-mapping>
+		<servlet-name>moduleDb-3.0</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>pl.scisoftware.root.filters.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<servlet-name>moduleDb-3.0</servlet-name>
+	</filter-mapping>
+	
+	<filter>
+	    <filter-name>ProxyFilter</filter-name>
+		<filter-class>pl.scisoftware.root.filters.ProxyFilter</filter-class>
+		<init-param>
+			<param-name>rootContexts</param-name>
+			<param-value>/bawprd-p01.local.umed.pl,/bpm.umed.pl</param-value>
+		</init-param>
+		<init-param>
+			<param-name>targetBaseUrl</param-name>
+			<param-value>https://localhost:9443</param-value>
+		</init-param>		
+	</filter>
+
+	<filter-mapping>
+		<filter-name>ProxyFilter</filter-name>
+		<servlet-name>moduleDb-3.0</servlet-name>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>pages/index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- Autoryzacja dostępu -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Access to default application services</web-resource-name>
+			<url-pattern>/pages/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>default-user</role-name>
+		</auth-constraint>
+
+		<user-data-constraint>
+			<!--Powinno być zamiast NONE - CONFIDENTIAL -->
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>UserData</realm-name>
+	</login-config>
+	
+	<security-role>
+		<description>Default user role</description> 
+		<role-name>default-user</role-name>
+	</security-role>
+
+	<error-page>
+		<error-code>400</error-code>
+		<location>/errors/50x.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>401</error-code>
+		<location>/errors/401.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/errors/403.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/errors/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/errors/50x.jsp</location>
+	</error-page>
+	<error-page>
+		<location>/errors/50x.jsp</location>
+	</error-page>
+	
+</web-app>

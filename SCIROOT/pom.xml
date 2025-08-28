@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>pl.slawas</groupId>
+		<artifactId>websphereapps</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>SCIROOT</artifactId>
+	<packaging>war</packaging>
+	<name>SCIROOT WebSphere App</name>
+
+	<properties>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<finalName>SCIROOT</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources-filtered</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources-filtered</directory>
+				<filtering>true</filtering>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>false</filtering>
+			</testResource>
+		</testResources>
+	</build>
+
+	<dependencies>
+
+		<!-- IBM WebSphere -->
+		<dependency>
+			<groupId>com.ibm.jaxws</groupId>
+			<artifactId>thinclient</artifactId>
+			<version>${websphere.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../websphere/${websphere.version}/runtimes/com.ibm.jaxws.thinclient_${websphere.version}.jar</systemPath>
+		</dependency>
+		<!-- IBM WebSphere -->
+		<!-- WIM -->
+		<!-- Potrzebne do budowania mechanizmów logowania zdarzeń w WebSPhere -->
+		<dependency>
+			<groupId>com.ibm.ws.runtime.wim</groupId>
+			<artifactId>core</artifactId>
+			<version>${websphere.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../websphere/${websphere.version}/plugins/com.ibm.ws.runtime.wim.core.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.ws.runtime.wim</groupId>
+			<artifactId>base</artifactId>
+			<version>${websphere.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../websphere/${websphere.version}/plugins/com.ibm.ws.runtime.wim.base.jar</systemPath>
+		</dependency>
+		<!-- //WIM -->
+		<!-- //IBM WebSphere -->		
+	
+	</dependencies>
+
+</project>

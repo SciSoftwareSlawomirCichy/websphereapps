@@ -1,0 +1,3 @@
+[submodule "defaultapplication"]
+	path = defaultapplication
+	url = https://github.com/SciSoftwareSlawomirCichy/defaultapplication.git
