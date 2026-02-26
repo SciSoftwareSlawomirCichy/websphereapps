@@ -101,8 +101,7 @@ a:hover img {
 
 		<div class="logos">
 			<img src="<%=request.getContextPath()%>/static/zdzislaw_403.png"
-				title="Access to the resource is prohibited for you." alt="[Access to the resource is prohibited for you.]" /></a>
-			
+				title="Access to the resource is prohibited for you." alt="[Access to the resource is prohibited for you.]" />
 		</div>
 		
 	</div>

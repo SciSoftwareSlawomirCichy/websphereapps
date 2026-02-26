@@ -101,8 +101,7 @@ a:hover img {
 
 		<div class="logos">
 			<img src="<%=request.getContextPath()%>/static/zdzislaw_500.png"
-				title="The page you are looking for is temporarily unavailable." alt="[The page you are looking for is temporarily unavailable.]" /></a>
-			
+				title="The page you are looking for is temporarily unavailable." alt="[The page you are looking for is temporarily unavailable.]" />
 		</div>
 
 	</div>

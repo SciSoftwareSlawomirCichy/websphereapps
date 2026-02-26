@@ -110,6 +110,7 @@
 		<location>/errors/50x.jsp</location>
 	</error-page>
 	<error-page>
+	    <exception-type>java.lang.Throwable</exception-type>
 		<location>/errors/50x.jsp</location>
 	</error-page>
 	

@@ -101,8 +101,7 @@ a:hover img {
 
 		<div class="logos">
 			<img src="<%=request.getContextPath()%>/static/zdzislaw_401.png"
-				title="You are not authorized to view these resources." alt="[You are not authorized to view these resources.]" /></a>
-			
+				title="You are not authorized to view these resources." alt="[You are not authorized to view these resources.]" />
 		</div>
 		
 	</div>

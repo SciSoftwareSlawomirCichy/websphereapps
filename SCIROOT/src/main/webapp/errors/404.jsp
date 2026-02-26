@@ -101,8 +101,7 @@ a:hover img {
 
 		<div class="logos">
 			<img src="<%=request.getContextPath()%>/static/zdzislaw_404.png"
-				title="The page you are looking for is not found." alt="[The page you are looking for is not found.]" /></a>
-			
+				title="The page you are looking for is not found." alt="[The page you are looking for is not found.]" />
 		</div>
 		
 	</div>
